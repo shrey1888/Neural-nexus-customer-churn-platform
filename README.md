@@ -1,16 +1,58 @@
-# 📊 Customer Churn Prediction and Retention Platform
+# Customer Churn Prediction and Retention Platform
 
-> AI/ML Capstone Project | Parul University & TelcoLearn – 2028 Batch
+## Team Neural Nexus
+
+Welcome to the official repository of **Team Neural Nexus**.
+
+This repository contains the complete development of our AI/ML Capstone Project for **Parul University & TelcoLearn (2027 Batch)**.
+
+Our goal is to build an intelligent Customer Relationship Management (CRM) platform that helps telecom companies identify customers who are likely to churn, understand the reasons behind those predictions, and generate personalized retention strategies using Artificial Intelligence.
 
 ---
 
-# 👥 Team Neural Nexus
+## Problem Statement
 
-Welcome to the official repository of Team Neural Nexus.
+Build a CRM web application for a telecom company that can:
 
-We are a team of Computer Science students working on developing an AI-powered Customer Relationship Management (CRM) platform that helps telecom companies predict customer churn, understand customer behavior, and improve customer retention through Machine Learning, Explainable AI, Generative AI, and Full-Stack Development.
+- Predict the probability of customer churn.
+- Segment customers based on their usage and billing behaviour.
+- Identify the major factors responsible for customer churn.
+- Generate personalized retention emails using Generative AI.
+- Provide an easy-to-use CRM dashboard for business users.
 
-### Team Members
+---
+
+## Dataset
+
+We are using the **Telco Customer Churn Dataset** from Kaggle.
+
+- **Dataset:** blastchar/telco-customer-churn
+- **Total Customers:** 7,043
+- **Features:** 21
+- **Target Variable:** Churn
+
+---
+
+## Our Approach
+
+Instead of building only a prediction model, we aim to develop a complete AI-powered solution.
+
+Our workflow will include:
+
+- Data Cleaning & Preprocessing
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Machine Learning (Logistic Regression & XGBoost)
+- Customer Segmentation (K-Means)
+- Deep Learning (MLP using PyTorch)
+- Explainable AI (SHAP)
+- LLM-based Personalized Retention Email Generation
+- React CRM Dashboard
+- Deployment
+
+---
+
+## Team Members
 
 | Name | Responsibility |
 |------|----------------|
@@ -19,200 +61,54 @@ We are a team of Computer Science students working on developing an AI-powered C
 | Divya | Customer Segmentation |
 | Khushvant | Full Stack Development, LLM & CRM |
 
-Mentor:Malvika Singh
+**Mentor:** *Malvika Singh*
 
 ---
 
-# 📖 Project Introduction
+## Repository Status
+ Project Started
 
-Customer churn is one of the biggest challenges faced by telecom companies. Every time a customer leaves and switches to another service provider, the company loses revenue and must spend additional resources to acquire new customers.
-
-Instead of reacting after customers leave, modern businesses use Artificial Intelligence to identify customers who are at risk of churning so that personalized retention strategies can be applied before they decide to leave.
-
-Our project focuses on building an intelligent CRM platform that helps telecom companies make proactive, data-driven retention decisions.
+We are currently in the initial phase of the project. The repository will be updated regularly as we complete each milestone over the next five weeks.
 
 ---
 
-# 🎯 Problem Statement
-
-Develop an AI-powered CRM web application for a telecom company that can:
-
-- Predict the probability of customer churn.
-- Segment customers based on their usage and billing behaviour.
-- Identify the major factors responsible for churn using Explainable AI.
-- Generate personalized retention emails and call scripts using Large Language Models.
-- Provide an interactive CRM dashboard for business users.
-
----
-
-# 📂 Dataset
-
-Dataset: Telco Customer Churn Dataset
-
-Source: Kaggle (blastchar/telco-customer-churn)
-
-### Dataset Information
-
-- Total Customers: 7,043
-- Features: 21
-- Target Variable: Churn
-
-The dataset contains customer demographics, telecom services, billing information, payment methods, contract details, tenure, monthly charges, total charges, and churn status.
-
----
-
-# 💼 Business Objective
-
-The primary business objective of this project is to help telecom companies reduce customer churn by providing early predictions, meaningful explanations, and personalized retention recommendations.
-
-Instead of simply predicting whether a customer will churn, our system aims to support business users in making informed retention decisions through AI-driven insights.
-
----
-
-# 🏗 Proposed Workflow
-
-```text
-Raw Dataset
-      │
-      ▼
-Data Cleaning & Preprocessing
-      │
-      ▼
-Exploratory Data Analysis
-      │
-      ▼
-Feature Engineering
-      │
-      ▼
-Machine Learning
-(Logistic Regression & XGBoost)
-      │
-      ▼
-Customer Segmentation
-(K-Means)
-      │
-      ▼
-Deep Learning
-(MLP using PyTorch)
-      │
-      ▼
-Explainable AI
-(SHAP)
-      │
-      ▼
-LLM-Based Retention Recommendation
-      │
-      ▼
-React CRM Dashboard
-```
-
----
-
-# 🛠 Technology Stack
-
-### Programming Languages
-
-- Python
-- JavaScript
-
-### Data Analysis
-
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-
-### Machine Learning
-
-- Scikit-learn
-- XGBoost
-
-### Deep Learning
-
-- PyTorch
-
-### Explainable AI
-
-- SHAP
-
-### Generative AI
-
-- Large Language Models (LLMs)
-
-### Backend
-
-- Flask / FastAPI
-
-### Frontend
-
-- React.js
-
-### Database
-
-- SQLite
-
-### Version Control
-
-- Git & GitHub
-
----
-
-# 📅 Project Roadmap
+## Project Timeline
 
 ### Week 1
-
 - Dataset Understanding
 - Data Cleaning
 - Exploratory Data Analysis
-- Documentation
 
 ### Week 2
-
 - Feature Engineering
 - Logistic Regression
 - XGBoost
 - Model Evaluation
 
 ### Week 3
-
 - Customer Segmentation
-- Deep Learning (MLP)
-- Explainable AI (SHAP)
+- Deep Learning
+- Explainable AI
 
 ### Week 4
-
 - Backend Development
 - React CRM
 - API Integration
-- Database
 
 ### Week 5
-
 - LLM Integration
-- Personalized Retention System
 - Testing
 - Deployment
 - Final Documentation
 
 ---
 
-# 📌 Current Status
-Project Initialization:
+## Vision
 
-This repository has been created to manage the complete lifecycle of the AI/ML Capstone Project.
-
-The team is currently in the planning and project setup phase. Development will begin with dataset exploration, data cleaning, and exploratory data analysis.
-
-Progress will be updated weekly as each milestone is completed.
+Our vision is to develop a practical AI solution that not only predicts customer churn but also helps businesses understand customer behavior and make informed retention decisions.
 
 ---
 
-#  License
+**Team Neural Nexus**
 
-This repository is developed as part of the AI/ML Capstone Project at Parul University & TelcoLearn (2028 Batch).
-
----
-
-## Team Neural Nexus
-
-### *"Predict. Explain. Retain."*
+*"Predict. Explain. Retain."*
