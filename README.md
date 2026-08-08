@@ -26,9 +26,9 @@ Build a CRM web application for a telecom company that can:
 
 We are using the **Telco Customer Churn Dataset** from Kaggle.
 
-- **Dataset:** blastchar/telco-customer-churn
-- **Total Customers:** 7,043
-- **Features:** 21
+- **Dataset:** Neural_Nexus_DataSet_Customer_churn
+- **Total Customers:** 30M
+- **Features:** 67
 - **Target Variable:** Churn
 
 ---
