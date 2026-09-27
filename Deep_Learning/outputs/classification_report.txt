@@ -1,0 +1,12 @@
+PyTorch MLP Model Test Evaluation
+===============================
+ROC AUC Score: 0.8402
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.74      0.81       776
+           1       0.52      0.77      0.62       281
+
+    accuracy                           0.75      1057
+   macro avg       0.71      0.76      0.72      1057
+weighted avg       0.80      0.75      0.76      1057

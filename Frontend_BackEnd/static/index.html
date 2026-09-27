@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TelcoPulse CRM — Customer Retention & Intelligence Platform</title>
+  <meta name="description" content="Next-generation telecom customer success & retention platform. Real-time churn prediction, humanized customer 360, explainable retention drivers, and automated AI outreach copilot.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+  <!-- Top Enterprise Application Navigation -->
+  <header class="crm-header">
+    <div class="brand-wrap">
+      <div class="brand-icon-box">TP</div>
+      <div class="brand-text">
+        <h1>
+          TelcoPulse CRM
+          <span class="enterprise-tag">ENTERPRISE</span>
+        </h1>
+        <div class="brand-sub">Customer Retention & Churn Intelligence Cloud</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tab-group">
+      <button class="nav-tab-btn active" data-tab="tab-workspace" id="nav-workspace">
+        <span>⚡</span> Customer 360 & Retention
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-directory" id="nav-directory">
+        <span>👥</span> Subscribers Directory
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-segments" id="nav-segments">
+        <span>🧬</span> Customer Personas
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-batch" id="nav-batch">
+        <span>📁</span> Batch Health Audits
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-guide" id="nav-guide">
+        <span>📖</span> Features Guide
+      </button>
+    </nav>
+
+    <!-- Header Right Actions & User -->
+    <div class="header-actions">
+      <button class="theme-toggle-btn" id="theme-toggle" title="Switch Light/Dark Mode">
+        <span id="theme-toggle-icon">☀️</span>
+        <span id="theme-toggle-text">Light Mode</span>
+      </button>
+      <button class="theme-toggle-btn" id="btn-auth-status" title="Authentication Settings">
+        <span id="auth-status-icon">🔑</span>
+        <span id="auth-status-text">Auth: Dev</span>
+      </button>
+
+      <div class="live-agent-badge">
+        <div class="pulse-dot"></div>
+        <span>AI Retention Copilot Active</span>
+      </div>
+
+      <div class="agent-profile">
+        <div class="agent-avatar">SL</div>
+        <div class="agent-info">
+          <span class="agent-name">Sarah Lin</span>
+          <span class="agent-role">Retention Operations Lead</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="crm-container">
+
+    <!-- Global Executive KPI Strip -->
+    <section class="metric-kpi-strip">
+      <div class="kpi-tile">
+        <div class="kpi-tile-header">
+          <span>Monitored Subscribers</span>
+          <span>👥</span>
+        </div>
+        <div class="kpi-tile-val" id="kpi-total-accounts">7,043</div>
+        <div class="kpi-tile-sub">Active Customer Accounts</div>
+      </div>
+
+      <div class="kpi-tile">
+        <div class="kpi-tile-header">
+          <span>Account Health Index</span>
+          <span>💚</span>
+        </div>
+        <div class="kpi-tile-val" id="kpi-health-rate" style="color: var(--emerald);">73.5%</div>
+        <div class="kpi-tile-sub">Average Customer Retention Rate</div>
+      </div>
+
+      <div class="kpi-tile">
+        <div class="kpi-tile-header">
+          <span>Annual Revenue Protected</span>
+          <span>🛡️</span>
+        </div>
+        <div class="kpi-tile-val" id="kpi-rev-saved" style="color: var(--cyan);">$1.45M</div>
+        <div class="kpi-tile-sub">Preserved via Proactive Interventions</div>
+      </div>
+
+      <div class="kpi-tile">
+        <div class="kpi-tile-header">
+          <span>Average Monthly ARPU</span>
+          <span>📈</span>
+        </div>
+        <div class="kpi-tile-val" id="kpi-avg-bill" style="color: var(--amber);">$64.76</div>
+        <div class="kpi-tile-sub">Average Monthly Spend / Account</div>
+      </div>
+    </section>
+
+    <!-- TAB 1: CUSTOMER 360 & RETENTION WORKSPACE -->
+    <section id="tab-workspace" class="tab-panel active">
+      <div class="customer-360-grid">
+        
+        <!-- Left: Customer Profile & Parameters -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">
+                <span>👤</span> Subscriber Account & Subscription Hub
+              </div>
+              <div class="panel-subtitle">Select or configure customer parameters to evaluate live retention health</div>
+            </div>
+          </div>
+
+          <!-- Quick Customer Selector -->
+          <div style="font-size: 0.76rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.45rem; font-weight: 700;">
+            Select Customer Profile:
+          </div>
+          <div class="quick-customers-strip">
+            <button class="quick-customer-chip" data-persona="high_risk">🚨 Eleanor Vance (At-Risk Fiber)</button>
+            <button class="quick-customer-chip" data-persona="loyal_power">💎 Marcus Brody (Loyal Family)</button>
+            <button class="quick-customer-chip" data-persona="budget_user">📱 Sarah Jenkins (Budget DSL)</button>
+            <button class="quick-customer-chip" data-persona="tech_unprotected">🛡️ David Miller (Senior Solo)</button>
+            <button class="quick-customer-chip" id="btn-load-demo-json" style="background: var(--primary-subtle); border-color: var(--primary); color: var(--primary); font-weight: 600;">📁 Test Demo JSON (Sophia Martinez)</button>
+            <button class="quick-customer-chip" id="btn-upload-customer-json">⬆️ Upload Customer JSON</button>
+            <input type="file" id="single-json-input" accept=".json" style="display: none;">
+          </div>
+
+          <!-- Human Customer Identity Card -->
+          <div class="customer-summary-box">
+            <div class="customer-pic" id="cust-avatar-box" style="background: #2563eb;">EV</div>
+            <div class="customer-info-wrap">
+              <div class="cust-name" id="cust-display-name">Eleanor Vance</div>
+              <div class="cust-contact">
+                <span id="cust-display-email">eleanor.vance@demo-telecom.invalid</span>
+                <span>•</span>
+                <span id="cust-display-phone">+1 (555) ***-9182</span>
+              </div>
+              <div class="cust-badge-row">
+                <span id="cust-display-sentiment" class="sentiment-badge at-risk">At-Risk / Price Sensitive</span>
+                <span style="font-size: 0.74rem; color: var(--text-faint);">Assigned: <strong style="color: var(--primary);">Alex Rivera</strong></span>
+                <span style="font-size: 0.74rem; color: var(--text-faint);">• <span id="cust-display-touch">3 days ago • Inbound Support</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Edit Account Form -->
+          <form id="subscriber-form">
+            
+            <div class="form-heading-divider">Account Demographics & Household</div>
+            <div class="form-grid-row">
+              <div class="form-item">
+                <label for="input-gender">Gender</label>
+                <select id="input-gender" class="form-control-select">
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-senior">Senior Citizen</label>
+                <select id="input-senior" class="form-control-select">
+                  <option value="0">Standard (Age &lt; 65)</option>
+                  <option value="1">Senior Citizen (Age 65+)</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-partner">Partner Status</label>
+                <select id="input-partner" class="form-control-select">
+                  <option value="No">Single Individual</option>
+                  <option value="Yes">Partner / Married</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-dependents">Dependents</label>
+                <select id="input-dependents" class="form-control-select">
+                  <option value="No">No Dependents</option>
+                  <option value="Yes">Has Children / Dependents</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-heading-divider">Account Longevity & Contract Agreement</div>
+            <div class="form-item" style="margin-bottom: 0.85rem;">
+              <label for="input-tenure">Account Age (Tenure): <span id="val-tenure" class="slider-val-tag">1 mo</span></label>
+              <div class="slider-container">
+                <input type="range" id="input-tenure" class="slider-input" min="1" max="72" value="1" step="1">
+              </div>
+            </div>
+
+            <div class="form-grid-row">
+              <div class="form-item">
+                <label for="input-contract">Contract Agreement</label>
+                <select id="input-contract" class="form-control-select">
+                  <option value="Month-to-month">Month-to-month</option>
+                  <option value="One year">1-Year Term Commitment</option>
+                  <option value="Two year">2-Year Term Commitment</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-payment">Billing Method</label>
+                <select id="input-payment" class="form-control-select">
+                  <option value="Electronic check">Electronic Check (Manual)</option>
+                  <option value="Mailed check">Mailed Paper Check</option>
+                  <option value="Bank transfer (automatic)">Bank Autopay (Automated)</option>
+                  <option value="Credit card (automatic)">Credit Card Autopay</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-heading-divider">Connectivity & Subscribed Add-ons</div>
+            <div class="form-grid-row">
+              <div class="form-item">
+                <label for="input-internetservice">Broadband Tier</label>
+                <select id="input-internetservice" class="form-control-select">
+                  <option value="Fiber optic">High-Speed Fiber Optic</option>
+                  <option value="DSL">Standard DSL</option>
+                  <option value="No">No Broadband</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-phoneservice">Voice Telephone Line</label>
+                <select id="input-phoneservice" class="form-control-select">
+                  <option value="Yes">Active Voice Service</option>
+                  <option value="No">No Voice Line</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-multiplelines">Multiple Phone Lines</label>
+                <select id="input-multiplelines" class="form-control-select">
+                  <option value="No">Single Line</option>
+                  <option value="Yes">Multi-Line Family</option>
+                  <option value="No phone service">No Phone Service</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-security">Cybersecurity Shield</label>
+                <select id="input-security" class="form-control-select">
+                  <option value="No">Unprotected</option>
+                  <option value="Yes">Security Suite Active</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-techsupport">Dedicated Tech Support</label>
+                <select id="input-techsupport" class="form-control-select">
+                  <option value="No">Standard Support</option>
+                  <option value="Yes">24/7 Dedicated Support</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-backup">Cloud Data Backup</label>
+                <select id="input-backup" class="form-control-select">
+                  <option value="No">No Cloud Backup</option>
+                  <option value="Yes">Automated Backup Active</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-protection">Device Hardware Care</label>
+                <select id="input-protection" class="form-control-select">
+                  <option value="No">No Hardware Care</option>
+                  <option value="Yes">Hardware Care Active</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-streamingtv">Streaming TV Package</label>
+                <select id="input-streamingtv" class="form-control-select">
+                  <option value="No">No Streaming TV</option>
+                  <option value="Yes">Streaming TV Active</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-streamingmovies">Streaming Movies Package</label>
+                <select id="input-streamingmovies" class="form-control-select">
+                  <option value="No">No Streaming Movies</option>
+                  <option value="Yes">Streaming Movies Active</option>
+                </select>
+              </div>
+
+              <div class="form-item">
+                <label for="input-paperless">Paperless Invoicing</label>
+                <select id="input-paperless" class="form-control-select">
+                  <option value="Yes">Paperless e-Billing</option>
+                  <option value="No">Physical Paper Mail</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-heading-divider">Billing Amounts</div>
+            <div class="form-item" style="margin-bottom: 0.85rem;">
+              <label for="input-monthly">Monthly Service Fee: <span id="val-monthly" class="slider-val-tag">$85.50</span></label>
+              <div class="slider-container">
+                <input type="range" id="input-monthly" class="slider-input" min="18" max="120" value="85.5" step="0.5">
+              </div>
+            </div>
+
+            <div class="form-item">
+              <label for="input-total">Cumulative Lifetime Spend ($)</label>
+              <input type="number" id="input-total" class="form-control-input" value="85.50" step="0.01">
+            </div>
+
+            <button type="submit" id="btn-assess-account" class="btn-primary-action">
+              <span>⚡ Evaluate Account Retention Health</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: AI Retention Copilot ("Aria") -->
+        <div>
+          
+          <!-- Copilot Assessment Card -->
+          <div class="ai-copilot-card">
+            <div class="ai-copilot-header">
+              <div class="ai-avatar-badge">
+                <div class="ai-spark-icon">✨</div>
+                <div>
+                  <div class="ai-name-label">Aria — AI Retention Specialist</div>
+                  <div class="ai-role-sub">Automated Customer Success Copilot</div>
+                </div>
+              </div>
+              <span id="copilot-eval-status" style="font-size: 0.75rem; color: var(--emerald); font-weight: 600;">● Analysis Live</span>
+            </div>
+
+            <!-- Health & Risk Dial -->
+            <div class="health-and-risk-split">
+              <div class="gauge-box" id="account-dial-box">
+                <div class="gauge-number" id="account-health-num">--</div>
+                <div class="gauge-caption">Health Score</div>
+              </div>
+
+              <div class="health-assessment-details">
+                <div class="risk-level-tag" id="account-status-tag">ANALYZING SUBSCRIBER...</div>
+                <div id="account-persona-tag" class="segment-label-pill">🧬 Persona Assigning...</div>
+                <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.45rem; line-height: 1.45;">
+                  Aria calculates a <strong id="churn-prob-text" style="color: var(--rose);">--% churn probability</strong> based on recent billing spikes and lack of contractual commitment.
+                </p>
+              </div>
+            </div>
+
+            <!-- Plain-English Why at Risk -->
+            <div class="talking-points-box">
+              <div class="talking-points-heading">
+                <span>🔍</span> Why is this customer at risk? (Key Drivers)
+              </div>
+              <ul class="talking-points-list" id="account-drivers-list">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <!-- Agent Talking Points -->
+            <div class="talking-points-box">
+              <div class="talking-points-heading">
+                <span>💡</span> Recommended Phone Talking Points for Reps
+              </div>
+              <ul class="talking-points-list" id="agent-talking-points">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <!-- 1-Click Action Interventions -->
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-faint); font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 0.05em;">
+              Recommended 1-Click Retention Interventions:
+            </div>
+            <div class="action-cards-grid" id="action-items-container">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Multi-Channel Outreach Generator -->
+          <div class="panel-card">
+            <div class="panel-header">
+              <div>
+                <div class="panel-title">
+                  <span>✉️</span> Customer Outreach Copilot
+                </div>
+                <div class="panel-subtitle">Draft warm, humanized communication tailored to this subscriber</div>
+              </div>
+            </div>
+
+            <div class="channel-switcher">
+              <button class="channel-btn active" data-channel="email">✉️ Email Draft</button>
+              <button class="channel-btn" data-channel="call">📞 Phone Script</button>
+              <button class="channel-btn" data-channel="sms">💬 SMS Quick Text</button>
+            </div>
+
+            <div class="copilot-content-box">
+              <button id="btn-copy-channel" class="copy-icon-btn">Copy 📋</button>
+              <div id="copilot-channel-content">Evaluating subscriber profile to craft customized outreach...</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 2: SUBSCRIBERS DIRECTORY (CRM TABLE) -->
+    <section id="tab-directory" class="tab-panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">
+              <span>👥</span> Subscriber Account Directory
+            </div>
+            <div class="panel-subtitle">Live database of all 7,043 subscriber accounts with health score and assigned CSM</div>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <input type="text" id="dir-search-input" class="search-crm-box" placeholder="Search by name, email, or account ID...">
+          
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <label style="font-size: 0.78rem; color: var(--text-muted);" for="dir-filter-contract">Contract:</label>
+            <select id="dir-filter-contract" class="form-control-select" style="font-size: 0.82rem; padding: 0.35rem 0.65rem;">
+              <option value="All">All Contracts</option>
+              <option value="Month-to-month">Month-to-month</option>
+              <option value="One year">1-Year Term</option>
+              <option value="Two year">2-Year Term</option>
+            </select>
+
+            <label style="font-size: 0.78rem; color: var(--text-muted);" for="dir-filter-status">Health Status:</label>
+            <select id="dir-filter-status" class="form-control-select" style="font-size: 0.82rem; padding: 0.35rem 0.65rem;">
+              <option value="All">All Accounts</option>
+              <option value="Yes">Historical Churned</option>
+              <option value="No">Active Subscribers</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-card-container">
+          <table class="subscribers-table">
+            <thead>
+              <tr>
+                <th>Subscriber Account</th>
+                <th>Contract Term</th>
+                <th>Broadband</th>
+                <th>Monthly Spend</th>
+                <th>Account Sentiment</th>
+                <th>Health Score</th>
+                <th>Assigned Agent</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="directory-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.15rem;">
+          <span id="directory-records-info" style="font-size: 0.8rem; color: var(--text-faint);">Page 1 of 1</span>
+          <div style="display: flex; gap: 0.5rem;">
+            <button id="btn-dir-prev" class="btn-outline-action">Previous</button>
+            <button id="btn-dir-next" class="btn-outline-action">Next</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 3: CUSTOMER PERSONAS & SEGMENTS -->
+    <section id="tab-segments" class="tab-panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">
+              <span>🧬</span> Strategic Behavioral Customer Personas
+            </div>
+            <div class="panel-subtitle">Unsupervised K-Means clustering across billing behavior, service counts, and contract longevity</div>
+          </div>
+          <span class="enterprise-tag">K-Means Model (k = 4)</span>
+        </div>
+
+        <div class="segment-cards-row" id="personas-grid-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: BATCH CSV HEALTH AUDITS -->
+    <section id="tab-batch" class="tab-panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">
+              <span>📁</span> Bulk Customer CSV & JSON Health Audits
+            </div>
+            <div class="panel-subtitle">Upload CSV or JSON files to score churn risk and cluster personas in bulk</div>
+          </div>
+        </div>
+
+        <div style="border: 2px dashed var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; background: var(--bg-subtle); margin-bottom: 1.5rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📊</div>
+          <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">Upload Telecom Customer Data File</div>
+          <div style="font-size: 0.82rem; color: var(--text-faint); margin-bottom: 1.25rem;">Standard Telco CSV or JSON format supported (e.g. demo_batch_customers.json)</div>
+          
+          <input type="file" id="batch-file-input" accept=".csv,.json" style="display: none;">
+          <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+            <button id="btn-trigger-batch-upload" class="btn-outline-action" style="padding: 0.65rem 1.75rem; font-size: 0.88rem; font-weight: 600;">
+              Select CSV / JSON File
+            </button>
+            <button id="btn-load-demo-batch" class="btn-outline-action" style="padding: 0.65rem 1.75rem; font-size: 0.88rem; font-weight: 600; background: var(--primary-subtle); border-color: var(--primary); color: var(--primary);">
+              ⚡ Load Demo Batch JSON (10 Accounts)
+            </button>
+          </div>
+
+          <div id="batch-file-status" style="margin-top: 1rem; font-size: 0.88rem; color: var(--cyan);"></div>
+        </div>
+
+        <div class="table-card-container">
+          <table class="subscribers-table">
+            <thead>
+              <tr>
+                <th>Customer ID</th>
+                <th>Tenure</th>
+                <th>Contract Term</th>
+                <th>Monthly Bill</th>
+                <th>Churn Risk %</th>
+                <th>Priority Status</th>
+                <th>Assigned Persona</th>
+              </tr>
+            </thead>
+            <tbody id="batch-results-tbody">
+              <tr>
+                <td colspan="7" style="text-align: center; padding: 2.5rem; color: var(--text-faint);">
+                  No batch file uploaded. Select a customer CSV above to inspect bulk risk scores.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 5: SYSTEM FEATURES & ARCHITECTURE GUIDE -->
+    <section id="tab-guide" class="tab-panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">
+              <span>📖</span> Platform Capabilities & Operational Workflows
+            </div>
+            <div class="panel-subtitle">Comprehensive guide to model engines, retention copilot, and automated subscriber actions</div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 900px; margin-bottom: 1.5rem;">
+          <strong>TelcoPulse CRM</strong> is an enterprise customer retention cloud designed specifically for telecom operators. It integrates real-time churn propensity diagnostics with frontline customer success workflows, enabling retention managers to preemptively identify at-risk subscribers, understand their exact human pain points, and deploy targeted incentives before contract cancellation.
+        </p>
+
+        <div class="features-doc-grid">
+          
+          <div class="doc-card">
+            <div class="doc-icon-header">
+              <div class="doc-icon">⚡</div>
+              <div>
+                <h3>Customer 360 & Churn Risk Engine</h3>
+                <span style="font-size: 0.72rem; color: var(--primary); font-weight: 600;">Core Analytics</span>
+              </div>
+            </div>
+            <p>
+              Calculates a live Customer Health Score (0–100) and Churn Probability based on billing amounts, contract commitment, and service history.
+            </p>
+            <ul class="doc-checklist">
+              <li>Instant predictive scoring with color-coded risk tiers</li>
+              <li>Includes realistic customer persona presets for quick testing</li>
+              <li>Calculates monthly and cumulative charges ratios</li>
+            </ul>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon-header">
+              <div class="doc-icon">✨</div>
+              <div>
+                <h3>AI Retention Copilot ('Aria')</h3>
+                <span style="font-size: 0.72rem; color: var(--purple); font-weight: 600;">Humanized Outreach</span>
+              </div>
+            </div>
+            <p>
+              Acts as an intelligent retention co-pilot for account reps. Synthesizes risk factors into plain-English reasons, phone talking points, and tailored outreach drafts.
+            </p>
+            <ul class="doc-checklist">
+              <li>Generates tailored Email, Phone Call Scripts, and SMS</li>
+              <li>Recommends 1-click executable retention actions</li>
+              <li>Removes robotic buzzwords in favor of natural conversational empathy</li>
+            </ul>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon-header">
+              <div class="doc-icon">👥</div>
+              <div>
+                <h3>Subscribers CRM Directory</h3>
+                <span style="font-size: 0.72rem; color: var(--amber); font-weight: 600;">Account Management</span>
+              </div>
+            </div>
+            <p>
+              Complete subscriber repository enriched with real customer names, contact info, assigned account managers, customer sentiment, and health scores.
+            </p>
+            <ul class="doc-checklist">
+              <li>Search across thousands of records by name, email, or account ID</li>
+              <li>Filter by contract structure and account status</li>
+              <li>One-click "Open Account" opens the Customer 360 workspace</li>
+            </ul>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon-header">
+              <div class="doc-icon">🧬</div>
+              <div>
+                <h3>Behavioral Customer Personas</h3>
+                <span style="font-size: 0.72rem; color: var(--purple); font-weight: 600;">Strategic Clustering</span>
+              </div>
+            </div>
+            <p>
+              Groups subscribers into 4 strategic behavioral personas using unsupervised K-Means clustering across billing behavior, tenure, and digital service adoption.
+            </p>
+            <ul class="doc-checklist">
+              <li>Identifies High-Value Month-to-Month spenders vs. Stable Economy users</li>
+              <li>Provides average tenure, spend, and segment churn rate</li>
+              <li>Prescribes battle-tested retention playbooks per group</li>
+            </ul>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon-header">
+              <div class="doc-icon">📁</div>
+              <div>
+                <h3>Batch Health Audits</h3>
+                <span style="font-size: 0.72rem; color: var(--cyan); font-weight: 600;">Bulk Operations</span>
+              </div>
+            </div>
+            <p>
+              Enables retention teams to upload entire subscriber CSV exports to batch-score churn probabilities, cluster personas, and highlight priority churn candidates.
+            </p>
+            <ul class="doc-checklist">
+              <li>Drag-and-drop CSV processing with automatic schema alignment</li>
+              <li>Calculates aggregate batch churn rates and at-risk counts</li>
+              <li>Prepares prioritized outreach queues for call center teams</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightweight Authentication Modal -->
+  <div id="auth-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-weight: 700; color: var(--text-main); margin: 0;">🔒 API Authentication</h3>
+        <button id="auth-modal-close" class="modal-close-btn">&times;</button>
+      </div>
+      <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 1rem;">
+        This platform requires an access token for inference and data operations. Enter your configured Bearer token or API key.
+      </p>
+      <input type="password" id="auth-token-input" class="form-control-input" placeholder="Enter API Key / Bearer Token" style="margin-bottom: 0.85rem; width: 100%;">
+      <div id="auth-error-msg" style="font-size: 0.78rem; color: var(--rose); margin-bottom: 0.85rem; display: none;"></div>
+      <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+        <button id="auth-clear-btn" class="btn-outline-action" style="padding: 0.45rem 1rem;">Clear Token</button>
+        <button id="auth-save-btn" class="btn-primary-action" style="padding: 0.45rem 1.25rem;">Save &amp; Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
